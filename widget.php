@@ -10,6 +10,8 @@ class Marketo_Subscribe_Widget extends WP_Widget
 		echo $instance['title'];
 		echo $after_title;
 		echo '<p>' . $instance['widget_text'] . '</p>';
+		// TO DO make the template for the form and use marketo api to save the lead.
+		print_r(get_option('marketo_credentials_option'));
 		echo $after_widget;
 	}
 
