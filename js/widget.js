@@ -12,6 +12,19 @@ jQuery(document).ready(function($){
 		e.preventDefault();
 
 		var form = $(this);
+		var inputsSection = form.find('#marketo-subscribe-inputs');
+		var invalidEmail = form.find('#marketo-subscribe-invalid-email');
+		var submitButton = form.find('input[type="submit"]');
+
+		if (!isEmail(form.find('#marketo-subscriber-email').val())) {
+			invalidEmail
+			.html('<p>Please use a valid email address</p>')
+			.slideDown(500);
+
+			return false;
+		}
+
+		submitButton.attr('disabled','disabled');
 
 		$.ajax({
 			url: form.attr('action'),
@@ -30,15 +43,19 @@ jQuery(document).ready(function($){
 			failure();
 		});
 
-		var failure = function()
-		{
-			form.find('#marketo-subscribe-inputs').append('<p>There was a problem submitting your information. Please try again later.</p>');
+		function failure() {
+			submitButton.removeAttr('disabled','disabled');
+			inputsSection.append('<p>There was a problem submitting your information. Please try again later.</p>');
 		}
 
-		var success = function()
-		{
-			form.find('#marketo-subscribe-inputs').slideUp(500);
+		function success() {
+			inputsSection.slideUp(500);
 			form.find('#marketo-subscribe-thank-you').slideDown(500);
+		}
+
+		function isEmail(email) {
+			var emailRegex = /.+\@.+\..+/;
+			return emailRegex.test(email);
 		}
 	});
 });
