@@ -104,7 +104,7 @@ class MarketoSubscribeSettings
 
     public function print_section_info()
     {
-    	print '<p>Please fill the following fields by consulting your Marketo admin page.</p>';
+    	print '<p>Please fill the following fields by consulting your Marketo admin page &rarr; Integration &rarr; SOAP API</p>';
     }
 
     /*
