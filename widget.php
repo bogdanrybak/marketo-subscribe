@@ -5,7 +5,7 @@ class Marketo_Subscribe_Widget extends WP_Widget
 	function widget($args, $instance)
 	{
 		// enquee the widget js
-		wp_enqueue_script( 'marketo_subscribe_widget', plugins_url('marketo-subscribe/js/widget.js'), array('jquery'), null, true );
+		wp_enqueue_script( 'marketo_subscribe_widget', plugins_url('js/widget.js', __FILE__), array('jquery'), null, true );
 
 		extract($args, EXTR_SKIP);
 

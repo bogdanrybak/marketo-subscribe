@@ -27,7 +27,7 @@ add_action('wp_ajax_marketo_subscribe', 'add_lead_to_marketo');
 add_action('wp_ajax_nopriv_marketo_subscribe', 'add_lead_to_marketo');
 
 /**
- * Adding lead to marketo using marketo API library by Bon Benubois. (https://github.com/flickerbox/marketo)
+ * Adding lead to marketo using marketo API library by Bon Ubois. (https://github.com/flickerbox/marketo)
  * Email address is used to create a new lead.
  * 
  * If marketo cookie is present it is also sent to identify the lead (should work if the munchkin script is used on the site)
