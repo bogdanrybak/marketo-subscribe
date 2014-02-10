@@ -34,7 +34,7 @@ jQuery(document).ready(function($){
 		})
 		.done(function(data) {
 			if (data.type == 'success') {
-				success();
+				success(data);
 			} else {
 				failure();
 			}
@@ -48,7 +48,8 @@ jQuery(document).ready(function($){
 			inputsSection.append('<p>There was a problem submitting your information. Please try again later.</p>');
 		}
 
-		function success() {
+		function success(data) {
+			$('#marketo-subscribe-thank-you').append(data.email + '.');
 			inputsSection.slideUp(500);
 			form.find('#marketo-subscribe-thank-you').slideDown(500);
 		}

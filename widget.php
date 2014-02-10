@@ -27,7 +27,7 @@ class Marketo_Subscribe_Widget extends WP_Widget
 					<p><input type="submit" value="Subscribe"></p>
 					<p id="marketo-subscribe-invalid-email" style="display: none;">Please use a valid email.</p>
 				</div>
-				<p id="marketo-subscribe-thank-you" style="display: none;"><?php echo $instance['thank_you'] ?></p>
+				<p id="marketo-subscribe-thank-you" style="display: none;"><?php echo $instance['thank_you']; ?></p>
 			</form>
 		<?php
 
